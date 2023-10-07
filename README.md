@@ -1,4 +1,5 @@
 # Philosophers
+I never thought philosophy would be so deadly.
 ## Dining Philosophers Problem
 The Dining Philosophers Problem is a well-known problem in computer science that serves as a classic example of common challenges in concurrent programming. This problem was originally conceived by Edsger Dijkstra in 1965 and can be summarized as follows:
 <details>
