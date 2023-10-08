@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:09:22 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 00:40:27 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:17:48 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	philo_init(t_data *data)
 		data->philos[i].id = i + 1;
 		data->philos[i].meal_count = 0;
 		data->philos[i].last_eat = 0;
-		// data->philos[i].is_dead = &data->is_dead;
-		// data->philos[i].mutex_die = &data->mutex_die;
-		// data->philos[i].mutex_print_msg = &data->mutex_print_msg;
+		data->philos[i].is_dead = &data->is_dead;
+		data->philos[i].mutex_die = &data->mutex_die;
+		data->philos[i].mutex_print_msg = &data->mutex_print_msg;
 		data->philos[i].data = data;
 		pthread_mutex_init(&data->philos[i].mutex_last_eat, NULL);
 		pthread_mutex_init(&data->philos[i].mutex_meal_count, NULL);

@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:23:56 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/07 23:13:33 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:14:10 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		if (die_check(&data) || eat_limit_check(&data))
 			break ;
 	i = -1;
-	while (++i < data.nb_philo && data.nb_philo != 1)
+	while (data.nb_philo != 1 && ++i < data.nb_philo)
 		pthread_join(data.philos[i].philo, NULL);
 	rip_philos(&data);
 	return (0);

@@ -7,7 +7,7 @@ OBJS			= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 INCS			= -Iincludes
 CC				= cc 
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror #-g -fsanitize=thread
+CFLAGS			= -Wall -Wextra -Werror #-g3 -fsanitize=thread
 MK				= mkdir -p
 
 all:			$(OBJ_DIR) $(NAME)

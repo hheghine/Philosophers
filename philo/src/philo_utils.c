@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 03:58:17 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/07 23:14:12 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:19:40 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_print(t_philo *philo, char *str, uint64_t time)
 {
-	pthread_mutex_lock(&philo->data->mutex_print_msg);
+	pthread_mutex_lock(philo->mutex_print_msg);
 	if (!is_dead(philo))
 		printf("[%lu ms] %d %s\n", time, philo->id, str);
-	pthread_mutex_unlock(&philo->data->mutex_print_msg);
+	pthread_mutex_unlock(philo->mutex_print_msg);
 }
 
 int	ft_strlen(const char *str)

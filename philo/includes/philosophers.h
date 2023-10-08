@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 03:57:24 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/07 23:40:06 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:17:34 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ struct	s_data;
 typedef struct s_philo
 {
 	int				id;
-	// int				*is_dead;
+	int				*is_dead;
 	int				meal_count;
 	uint64_t		last_eat;
 	pthread_t		philo;
 	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	*r_fork;
-	// pthread_mutex_t	*mutex_die;
-	// pthread_mutex_t	*mutex_print_msg;
+	pthread_mutex_t	*mutex_die;
+	pthread_mutex_t	*mutex_print_msg;
 	pthread_mutex_t	mutex_last_eat;
 	pthread_mutex_t	mutex_meal_count;
 	struct s_data	*data;
