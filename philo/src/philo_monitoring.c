@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 22:16:19 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/07 23:13:16 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/08 22:51:54 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,16 @@ bool	eat_limit_check(t_data *data)
 {
 	int	i;
 
-	i = 0;
-	while (data->eat_limit != -1 && i < data->nb_philo)
+	i = -1;
+	while (data->eat_limit != -1 && ++i < data->nb_philo)
 	{
 		pthread_mutex_lock(&data->philos[i].mutex_meal_count);
-		if (data->philos[i].meal_count >= data->eat_limit)
-		{
-			pthread_mutex_unlock(&data->philos[i].mutex_meal_count);
-			i++;
-		}
-		else
+		if (data->philos[i].meal_count < data->eat_limit)
 			break;
+		pthread_mutex_unlock(&data->philos[i].mutex_meal_count);
+		// i++;
 	}
-	pthread_mutex_unlock(&data->philos[i].mutex_meal_count);
+	// pthread_mutex_unlock(&data->philos[i].mutex_meal_count);
 	if (i == data->nb_philo)
 	{
 		pthread_mutex_lock(&data->mutex_die);
