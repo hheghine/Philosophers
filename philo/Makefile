@@ -7,7 +7,7 @@ OBJS			= $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 INCS			= -Iincludes
 CC				= cc 
 RM				= rm -rf
-CFLAGS			= -Wall -Wextra -Werror #-g3 -fsanitize=thread
+CFLAGS			= -Wall -Wextra -Werror -g3 -fsanitize=thread
 MK				= mkdir -p
 
 all:			$(OBJ_DIR) $(NAME)
@@ -15,7 +15,7 @@ all:			$(OBJ_DIR) $(NAME)
 $(OBJ_DIR): $(SRC_DIR)
 	$(MK) $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS)
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c $(HEADERS) Makefile
 	$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 
 $(NAME):		$(OBJS)

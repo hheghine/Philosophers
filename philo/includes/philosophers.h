@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 03:57:24 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 01:17:34 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:20:08 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_philo
 	pthread_mutex_t	mutex_last_eat;
 	pthread_mutex_t	mutex_meal_count;
 	struct s_data	*data;
+	int				finished;
 }	t_philo;
 
 typedef struct s_data

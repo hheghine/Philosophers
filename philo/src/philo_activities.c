@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 21:29:44 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 01:11:54 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 02:12:30 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	*routine(void *info)
 	if (philo->id % 2 == 0)
 		usleep(1000);
 	philo_activity(philo);
+	philo->finished = 1;
 	return (0);
 }

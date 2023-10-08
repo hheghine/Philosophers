@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 22:16:19 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 00:52:31 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/10/09 01:58:52 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ bool	die_check(t_data *data)
 	while (++i < data->nb_philo)
 	{
 		pthread_mutex_lock(&data->philos[i].mutex_last_eat);
-		if (ft_gettime() - data->philos[i].last_eat > data->time_to_die)
+		if (ft_gettime() - data->philos[i].last_eat >= data->time_to_die)
 		{
 			pthread_mutex_lock(&data->mutex_die);
 			data->is_dead = 1;
