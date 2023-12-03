@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 21:29:44 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 02:12:30 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:54:19 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ void	philo_activity(t_philo *philo)
 		philo->last_eat = ft_gettime();
 		pthread_mutex_unlock(&philo->mutex_last_eat);
 		ft_usleep(philo, philo->data->time_to_eat);
+		ft_print(philo, SLEEP, ft_gettime());
 		pthread_mutex_lock(&philo->mutex_meal_count);
 		philo->meal_count++;
 		pthread_mutex_unlock(&philo->mutex_meal_count);
 		pthread_mutex_unlock(philo->l_fork);
 		pthread_mutex_unlock(philo->r_fork);
-		ft_print(philo, SLEEP, ft_gettime());
 		ft_usleep(philo, philo->data->time_to_sleep);
 		ft_print(philo, THINK, ft_gettime());
 	}
