@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 21:29:44 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/12/03 21:54:19 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:43:47 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	pick_forks(t_philo *philo)
 {
-	if (philo->id == philo->data->nb_philo) // && != 1
+	if (philo->id == philo->data->nb_philo)
 	{
 		pthread_mutex_lock(philo->r_fork);
 		ft_print(philo, TAKE_FORK_R, ft_gettime());
@@ -60,7 +60,7 @@ void	*routine(void *info)
 	philo->last_eat = ft_gettime();
 	pthread_mutex_unlock(&philo->mutex_last_eat);
 	if (philo->id % 2 == 0)
-		usleep(1000);
+		usleep(100);
 	philo_activity(philo);
 	philo->finished = 1;
 	return (0);

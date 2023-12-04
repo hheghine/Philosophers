@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 03:57:52 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 01:00:28 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:41:04 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_error(char *str)
 void	is_correct_num(int argc, char **argv)
 {
 	int	i;
-	
+
 	if (ft_atoi(argv[1]) == 0)
 		ft_error("\tNo philos?!\n");
 	if (ft_atoi(argv[1]) > 200)

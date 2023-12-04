@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 21:38:45 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 02:40:11 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:41:58 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	is_dead(t_philo *philo)
 {
 	int	flag;
-	
+
 	pthread_mutex_lock(philo->mutex_die);
 	flag = *(philo->is_dead);
 	pthread_mutex_unlock(philo->mutex_die);

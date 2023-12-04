@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 13:23:56 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 01:14:10 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:43:27 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	main(int argc, char **argv)
 {
-	t_data  data;
+	t_data	data;
 	int		i;
-	
+
 	input_check(argc, argv);
 	data_init(argc, argv, &data);
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 19:09:22 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/09 02:28:41 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:41:37 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	fork_init(t_data *data)
 {
 	int	i;
 
-	data->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
-					* data->nb_philo);
+	data->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) \
+		* data->nb_philo);
 	if (!data->forks)
 		ft_error("\tMalloc error\n");
 	i = -1;

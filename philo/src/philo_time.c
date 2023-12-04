@@ -6,7 +6,7 @@
 /*   By: hbalasan <hbalasan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 03:15:48 by hbalasan          #+#    #+#             */
-/*   Updated: 2023/10/07 23:26:40 by hbalasan         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:42:59 by hbalasan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_usleep(t_philo *philo, uint64_t sleep_time)
 	while (!is_dead(philo))
 	{
 		if (ft_gettime() - start >= sleep_time)
-			break;
+			break ;
 		usleep(50);
 	}
 }
@@ -40,7 +40,7 @@ uint64_t	ft_gettime(void)
 	struct timeval	timeval;
 	static uint64_t	start;
 	static int		count;
-	
+
 	if (count == 0)
 	{
 		gettimeofday(&timeval, NULL);
@@ -48,5 +48,6 @@ uint64_t	ft_gettime(void)
 		count++;
 	}
 	gettimeofday(&timeval, NULL);
-	return ((timeval.tv_sec * (uint64_t)1000) + (timeval.tv_usec / 1000) - start);
+	return ((timeval.tv_sec * (uint64_t)1000) + (timeval.tv_usec / 1000) \
+	- start);
 }
